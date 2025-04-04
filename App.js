@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import useSound from 'use-sound';
-import successSound from './sounds/success.mp3';
-import errorSound from './sounds/error.mp3';
-import finishSound from './sounds/finish.mp3';
+import successSound from './success.mp3';
+import errorSound from './error.mp3';
+import finishSound from './finish.mp3';
 
 const QuizApp = () => {
   const [questions, setQuestions] = useState([]);
@@ -30,7 +30,7 @@ const QuizApp = () => {
 
   const fetchQuestions = async () => {
     try {
-      const response = await fetch('./quest/questions.json');
+      const response = await fetch('./questions.json');
       let data = await response.json();
       data = shuffleArray(data);
       setQuestions(data);
